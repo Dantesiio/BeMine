@@ -1,27 +1,90 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fce4ec;
+    color: #880e4f;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.card {
+    border: 2px solid #880e4f;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card p {
+    padding: 10px;
+    background: #f8bbd0;
     margin: 0;
 }
-#container {
-    text-align: center;
-}
-#container-imagen{
+
+button {
+    background: #880e4f;
+    color: white;
+    border: none;
     padding: 10px 20px;
-    display: flex;
-}
-#yes-button{
-    padding: 10px 20px;
-    font-size: 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: background 0.3s;
 }
-#no-button {
-    padding: 10px 20px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: transform 0.3s;
+
+button:hover {
+    background: #ad1457;
+}
+
+.hidden {
+    display: none;
+}
+
+#invitation {
+    margin-top: 20px;
+    background: #f8bbd0;
+    padding: 15px;
+    border-radius: 10px;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
