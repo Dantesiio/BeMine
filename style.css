@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -8,6 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    flex-direction: column; /* Permite apilar elementos en dispositivos pequeños */
 }
 
 .container {
@@ -16,21 +18,25 @@ body {
     border-radius: 10px;
     background: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 90%; /* Máximo ancho relativo */
+    width: 400px; /* Ancho por defecto */
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Tamaño relativo */
     margin-bottom: 10px;
 }
 
 p {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .gallery {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten a la pantalla */
     margin: 20px 0;
 }
 
@@ -38,7 +44,9 @@ p {
     border: 2px solid #880e4f;
     border-radius: 10px;
     overflow: hidden;
-    width: 200px;
+    width: 200px; /* Tamaño fijo para tarjetas */
+    flex: 1 1 calc(100% - 40px); /* Responsive */
+    max-width: 200px; /* Ancho máximo */
 }
 
 .card img {
@@ -51,6 +59,7 @@ p {
     padding: 10px;
     background: #f8bbd0;
     margin: 0;
+    font-size: 0.9rem;
 }
 
 button {
@@ -58,10 +67,13 @@ button {
     color: white;
     border: none;
     padding: 10px 20px;
-    font-size: 1.2rem;
+    font-size: 1rem; /* Tamaño ajustado */
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
+    width: 100%; /* Botón ocupa todo el ancho en móviles */
+    max-width: 200px; /* Máximo ancho */
+    margin: 0 auto; /* Centrado */
 }
 
 button:hover {
@@ -80,11 +92,51 @@ button:hover {
     animation: fadeIn 1s;
 }
 
+/* Animación */
 @keyframes fadeIn {
     from {
         opacity: 0;
     }
     to {
         opacity: 1;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .gallery {
+        gap: 10px;
+    }
+
+    .card {
+        width: 100%; /* Tarjetas ocupan todo el ancho */
+        max-width: 100%;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .container {
+        width: 80%; /* Ajuste para tablets */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.1rem;
     }
 }
